@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////
 /*   Provided Code - Please Don't Edit   */
 ////////////////////////////////////////////////
-'use strict';
+//'use strict';
 
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.");
@@ -65,7 +65,7 @@ function playToFive() {
     var computerWins = 0;
     var ties = 0;
 
-	while (playerWins < 5 && computerWins < 5 && ties < 10) {
+	while (playerWins < 5 && computerWins < 5) {
 		var playerMove = getPlayerMove();
 		var computerMove = getComputerMove();
 		var winner = getWinner(playerMove,computerMove);
@@ -93,6 +93,15 @@ function playToFive() {
 		console.log(wintext + "The score is now " + playerWins + " to " + computerWins + ".");
 	}    
 
+	console.log("*** GAME OVER ****");
+
+	if (playerWins > computerWins) {
+		console.log("CONGRATULATIONS, Player! You won!");
+	} else {
+		console.log("Womp. The computer won.");
+	}
+
     return [playerWins, computerWins, ties];
 }
 
+playToFive();
